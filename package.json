@@ -7,6 +7,7 @@
     "watch": "tsc -w",
     "start": "node dist/index.js",
     "dev": "nodemon dist/index.js",
+    "prebuild":"tsc",
     "build": "pkg ."
   },
   "bin": {
