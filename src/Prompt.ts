@@ -1,30 +1,45 @@
-import { createInterface, Interface } from 'readline';
+import { createInterface, Interface, ReadLineOptions } from 'readline';
+//.d=1
 
-//.b=12
+const interfaceOptions: ReadLineOptions = {
+
+    input:  process.stdin,
+
+    output:  process.stdout,
+};
+
+//.b=21
 class Prompt {
+
 	reader: Interface;
+
+	//.d=1
 
 	//.i
 	constructor() {
-		this.reader = createInterface({
-			input: process.stdin,
-			output: process.stdout,
-		});
+
+		this.reader = createInterface(interfaceOptions);
+
 		//.d=1
 	}
 
 	//.i
-	getVar = (message: string = ''): Promise<string> => { //.m
+	getVar = (message = ''): Promise<string> => { //.m
+
 		return new Promise((resolve) => {
+
 			this.reader.question(message, (answer) => {
+
 				resolve(answer);
 			});
 		});
-		//.d=5
+
+		//.d=6
 	};
 
 	//.i
-	closePrompt = () => { //.m
+	closePrompt = () => {
+
 		this.reader.close();
 	};
 }

@@ -1,4 +1,4 @@
-import { ClassType, CodeLineType } from './types';
+import { ClassType, CodeLineType } from './main';
 
 class ClassObj {
 
@@ -18,21 +18,25 @@ class ClassObj {
 
 	modifiedCodeLines: number = 0;
 
+	//.i
 	constructor(name: string) {
 
 		this.name = name;
 	}
 
+	//.i
 	addCodeLines = (type: CodeLineType, qty: number = 1) => {
 
 		this[`${type}CodeLines`] += qty;
 	};
 
+	//.i
 	addItem = () => {
 
 		this.items++;
 	};
 
+	//.i
 	toString() {
 
 		const { classType, name, totalCodeLines, items, modifiedCodeLines, addedCodeLines, baseCodeLines, deletedCodeLines } = this;

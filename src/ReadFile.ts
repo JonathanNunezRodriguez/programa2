@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 
 export type ProcessFileCallback = (line: string) => void;
 
-//.b=9
+//.b=14
 class ReadFile {
 
 	filename: string;
@@ -14,23 +14,21 @@ class ReadFile {
 	//.i
 	constructor(filename: string) { 
 
-		this.filename = filename.split('.')[0];
+		this.filename = filename.split('.')[0]; //.m
 
-		this.fileformat = filename.split('.')[1];		
+		this.fileformat = filename.split('.')[1]; //.m
 	}
 
 	//.i
-	readFile = () => {
+	readFile = () => { //.m
 
-		// const dir = join(__dirname, `${this.filename}.${this.fileformat}`);
+		this.lines = readFileSync(`./${this.filename}.${this.fileformat}`, 'utf-8').split(/\r?\n/); //.m
 
-		// console.log(dir)
-
-		this.lines = readFileSync(`./${this.filename}.${this.fileformat}`, 'utf-8').split(/\r?\n/);
+		//.d=1
 	};
 
 	//.i
-	proccesFile = (callback: ProcessFileCallback) => { //.m
+	proccesFile = (callback: ProcessFileCallback) => {
 		
 		this.lines.forEach(callback);
 	};
