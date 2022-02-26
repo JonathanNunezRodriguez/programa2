@@ -45,7 +45,7 @@ const printAnswer = (classes: ClassObj[]) => {
 
 	console.log('--------------------------------------------');
 
-	console.log('CLASES NUEVAS');
+	console.log('CLASES NUEVAS:');
 
 	classes.forEach((classObj) => {
 
@@ -57,7 +57,7 @@ const printAnswer = (classes: ClassObj[]) => {
 
 	console.log('--------------------------------------------');
 
-	console.log('CLASES REUSADAS');
+	console.log('CLASES REUSADAS:');
 
 	classes.forEach((classObj) => {
 
